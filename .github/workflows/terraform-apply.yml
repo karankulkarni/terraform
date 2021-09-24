@@ -15,9 +15,9 @@ jobs:
   terraform-apply: 
     runs-on: ubuntu-latest
 
-    defaults:
-      run:
-        working-directory: poc
+  #  defaults:
+   #   run:
+    #    working-directory: poc
       
     env:
       ARM_CLIENT_ID: ${{ secrets.AZ_CLIENT_ID }}
