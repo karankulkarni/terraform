@@ -24,9 +24,9 @@ jobs:
       contents: read
       
     env:
-      ARM_CLIENT_ID: ${{ secrets.AZ_CLIENT_ID }}
-      ARM_SUBSCRIPTION_ID: ${{ secrets.AZ_SUBSCRIPTION_ID }}
-      ARM_TENANT_ID: ${{ secrets.AZ_TENANT_ID }}
+      ARM_CLIENT_ID: ${{ vars.AZ_CLIENT_ID }}
+      ARM_SUBSCRIPTION_ID: ${{ vars.AZ_SUBSCRIPTION_ID }}
+      ARM_TENANT_ID: ${{ vars.AZ_TENANT_ID }}
       ARM_USE_OIDC: true
 
     steps:
@@ -40,9 +40,9 @@ jobs:
       - name: Azure Login (OIDC)
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZ_CLIENT_ID }}
-          tenant-id: ${{ secrets.AZ_TENANT_ID }}
-          subscription-id: ${{ secrets.AZ_SUBSCRIPTION_ID }}
+          client-id: $ARM_CLIENT_ID
+          tenant-id: $ARM_TENANT_ID
+          subscription-id: $ARM_SUBSCRIPTION_ID
 
       - name: Setup terraform
         uses: hashicorp/setup-terraform@v1
