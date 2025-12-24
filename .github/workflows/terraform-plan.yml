@@ -33,9 +33,9 @@ jobs:
       - uses: actions/checkout@v4
 
       - run: |
-         echo " client-id: ${{ secrets.AZ_CLIENT_ID }}"
-         echo "tenant-id: ${{ secrets.AZ_TENANT_ID }}"
-         echo "subscription-id: ${{ secrets.AZ_SUBSCRIPTION_ID }}"
+         echo " client-id: ${{ vars.AZ_CLIENT_ID }}"
+         echo "tenant-id: ${{ vars.AZ_TENANT_ID }}"
+         echo "subscription-id: ${{ vars.AZ_SUBSCRIPTION_ID }}"
 
       - name: Azure Login (OIDC)
         uses: azure/login@v2
