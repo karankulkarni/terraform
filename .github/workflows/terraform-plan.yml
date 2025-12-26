@@ -31,6 +31,7 @@ jobs:
       - name: Azure Login (OIDC)
         uses: azure/login@v2
         with:
+          auth_type: SERVICE_PRINCIPAL
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
       - name: Verify Azure Login
