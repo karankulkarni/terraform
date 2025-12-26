@@ -44,6 +44,9 @@ jobs:
           tenant-id: ${{vars.AZ_TENANT_ID }}
           subscription-id: ${{ vars.AZ_SUBSCRIPTION_ID }}
 
+      - name: Verify Azure Login
+        run: az account list --output table
+
       - name: Setup terraform
         uses: hashicorp/setup-terraform@v1
 
