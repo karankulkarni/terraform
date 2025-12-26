@@ -36,7 +36,14 @@ jobs:
          echo " client-id: ${{ vars.AZ_CLIENT_ID }}"
          echo "tenant-id: ${{ vars.AZ_TENANT_ID }}"
          echo "subscription-id: ${{ vars.AZ_SUBSCRIPTION_ID }}"
-         
+
+      - name: Azure Login (OIDC)
+        uses: azure/login@v2
+        with:
+          client-id: ${{ vars.AZ_CLIENT_ID }}
+          tenant-id: ${{vars.AZ_TENANT_ID }}
+          subscription-id: ${{ vars.AZ_SUBSCRIPTION_ID }}
+
       - name: Setup terraform
         uses: hashicorp/setup-terraform@v1
 
