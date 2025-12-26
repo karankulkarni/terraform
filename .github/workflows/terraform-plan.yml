@@ -28,18 +28,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - run: |
-         echo " client-id: ${{ vars.AZ_CLIENT_ID }}"
-         echo "tenant-id: ${{ vars.AZ_TENANT_ID }}"
-         echo "subscription-id: ${{ vars.AZ_SUBSCRIPTION_ID }}"
-
       - name: Azure Login (OIDC)
         uses: azure/login@v2
         with:
-          client-id: ${{ vars.AZ_CLIENT_ID }}
-          client-secret: ${{ secrets.AZ_CLIENT_SECRET }}
-          tenant-id: ${{vars.AZ_TENANT_ID }}
-          subscription-id: ${{ vars.AZ_SUBSCRIPTION_ID }}
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
 
       - name: Verify Azure Login
         run: az account list --output table
