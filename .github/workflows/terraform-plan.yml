@@ -27,7 +27,7 @@ jobs:
       ARM_CLIENT_ID: ${{ vars.AZ_CLIENT_ID }}
       ARM_SUBSCRIPTION_ID: ${{ vars.AZ_SUBSCRIPTION_ID }}
       ARM_TENANT_ID: ${{ vars.AZ_TENANT_ID }}
-      ARM_USE_OIDC: true
+      ARM_USE_MSI: true
 
     steps:
       - uses: actions/checkout@v4
