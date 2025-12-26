@@ -27,7 +27,7 @@ jobs:
       ARM_CLIENT_ID: ${{ vars.AZ_CLIENT_ID }}
       ARM_SUBSCRIPTION_ID: ${{ vars.AZ_SUBSCRIPTION_ID }}
       ARM_TENANT_ID: ${{ vars.AZ_TENANT_ID }}
-      ARM_USE_OIDC: true
+      #ARM_USE_OIDC: true
 
     steps:
       - uses: actions/checkout@v4
@@ -41,6 +41,7 @@ jobs:
         uses: azure/login@v2
         with:
           client-id: ${{ vars.AZ_CLIENT_ID }}
+          client-secret: ${{ secrets.AZ_CLIENT_SECRET }}
           tenant-id: ${{vars.AZ_TENANT_ID }}
           subscription-id: ${{ vars.AZ_SUBSCRIPTION_ID }}
 
