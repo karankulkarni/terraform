@@ -18,10 +18,6 @@ jobs:
 
   terraform-plan: 
     runs-on: ubuntu-latest
-
-    permissions:
-      id-token: write
-      contents: read
       
     env:
       ARM_CLIENT_ID: ${{ vars.AZ_CLIENT_ID }}
